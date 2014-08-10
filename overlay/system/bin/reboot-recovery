@@ -1,0 +1,8 @@
+#!/system/bin/sh
+
+if [ ! -f /cache/recovery/command ]; then
+    echo " " > /cache/recovery/command && reboot
+else
+    reboot
+fi
+

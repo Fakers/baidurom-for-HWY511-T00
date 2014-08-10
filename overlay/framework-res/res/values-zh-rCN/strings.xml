@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ext_media_checking_notification_title">正在准备 SD 卡</string>
+    <string name="ext_media_nofs_notification_title">空 SD 卡</string>
+    <string name="ext_media_nofs_notification_message">SD 卡中没有任何文件或使用了不支持的文件系统。</string>
+    <string name="ext_media_unmountable_notification_title">SD 卡受损</string>
+    <string name="ext_media_unmountable_notification_message">SD 卡已损坏，请尝试重新格式化。</string>
+    <string name="ext_media_badremoval_notification_title">SD 卡未正常移除</string>
+    <string name="ext_media_badremoval_notification_message">请先卸载 SD 卡，再将其移除，以防数据丢失。</string>
+    <string name="ext_media_safe_unmount_notification_title">SD 卡已安全移除</string>
+    <string name="ext_media_safe_unmount_notification_message">您现在可以安全移除 SD 卡。</string>
+    <string name="ext_media_nomedia_notification_title">已移除 SD 卡</string>
+    <string name="ext_media_nomedia_notification_message">SD 卡已移除。请插入新的 SD 卡。</string>
+</resources>

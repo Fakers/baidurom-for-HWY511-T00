@@ -1,0 +1,740 @@
+.method notifyMissedCall(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Landroid/graphics/Bitmap;JIJ)V
+    .locals 22
+    .parameter "name"
+    .parameter "number"
+    .parameter "type"
+    .parameter "photo"
+    .parameter "photoIcon"
+    .parameter "date"
+    .parameter "callVideo"
+    .parameter "simId"
+
+    .prologue
+    .line 618
+    invoke-static {}, Lcom/android/phone/PhoneApp;->createCallLogIntent()Landroid/content/Intent;
+
+    move-result-object v4
+
+    .line 620
+    .local v4, callLogIntent:Landroid/content/Intent;
+    move-wide/from16 v13, p9
+
+    .line 625
+    .local v13, showSimId:J
+    sget-boolean v17, Lcom/android/phone/PhoneApp;->sVoiceCapable:Z
+
+    if-nez v17, :cond_0
+
+    .line 742
+    .end local p4
+    :goto_0
+    return-void
+
+    .line 642
+    .restart local p4
+    :cond_0
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/android/phone/NotificationMgr;->mNumberMissedCalls:I
+
+    move/from16 v17, v0
+
+    add-int/lit8 v17, v17, 0x1
+
+    move/from16 v0, v17
+
+    move-object/from16 v1, p0
+
+    iput v0, v1, Lcom/android/phone/NotificationMgr;->mNumberMissedCalls:I
+
+    .line 643
+    invoke-static/range {p2 .. p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v17
+
+    if-nez v17, :cond_4
+
+    .line 644
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/phone/NotificationMgr;->mMissedCallsNumbers:Ljava/util/ArrayList;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, v17
+
+    move-object/from16 v1, p2
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 649
+    :goto_1
+    const-wide/16 v17, 0x0
+
+    cmp-long v17, p9, v17
+
+    if-lez v17, :cond_2
+
+    .line 650
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/phone/NotificationMgr;->mMissedCallsSimIds:Ljava/util/ArrayList;
+
+    move-object/from16 v17, v0
+
+    invoke-static/range {p9 .. p10}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v18
+
+    invoke-virtual/range {v17 .. v18}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 651
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/phone/NotificationMgr;->mMissedCallsSimIds:Ljava/util/ArrayList;
+
+    move-object/from16 v17, v0
+
+    invoke-virtual/range {v17 .. v17}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v8
+
+    .local v8, i$:Ljava/util/Iterator;
+    :cond_1
+    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v17
+
+    if-eqz v17, :cond_2
+
+    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v17
+
+    check-cast v17, Ljava/lang/Long;
+
+    invoke-virtual/range {v17 .. v17}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v9
+
+    .line 652
+    .local v9, missedSimId:J
+    cmp-long v17, v9, p9
+
+    if-eqz v17, :cond_1
+
+    .line 653
+    const-wide/16 v13, -0x1
+
+    .line 660
+    .end local v8           #i$:Ljava/util/Iterator;
+    .end local v9           #missedSimId:J
+    :cond_2
+    if-eqz p1, :cond_5
+
+    invoke-static/range {p1 .. p1}, Landroid/text/TextUtils;->isGraphic(Ljava/lang/CharSequence;)Z
+
+    move-result v17
+
+    if-eqz v17, :cond_5
+
+    .line 661
+    move-object/from16 v5, p1
+
+    .line 672
+    .local v5, callName:Ljava/lang/String;
+    :goto_2
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/android/phone/NotificationMgr;->mNumberMissedCalls:I
+
+    move/from16 v17, v0
+
+    const/16 v18, 0x1
+
+    move/from16 v0, v17
+
+    move/from16 v1, v18
+
+    if-ne v0, v1, :cond_7
+
+    .line 673
+    const v16, 0x7f0b0198
+
+    .line 674
+    .local v16, titleResId:I
+    move-object v7, v5
+
+    .line 681
+    .local v7, expandedText:Ljava/lang/String;
+    :goto_3
+    const/16 v17, 0x1
+
+    move/from16 v0, v17
+
+    move/from16 v1, p8
+
+    if-ne v0, v1, :cond_8
+
+    const v15, 0x7f0201ce
+
+    .line 684
+    .local v15, smallIconId:I
+    :goto_4
+    new-instance v3, Landroid/app/Notification$Builder;
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/phone/NotificationMgr;->mContext:Landroid/content/Context;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, v17
+
+    invoke-direct {v3, v0}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;)V
+
+    .line 685
+    .local v3, builder:Landroid/app/Notification$Builder;
+    invoke-virtual {v3, v15}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
+
+    move-result-object v17
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/phone/NotificationMgr;->mContext:Landroid/content/Context;
+
+    move-object/from16 v18, v0
+
+    const v19, 0x7f0b019b
+
+    const/16 v20, 0x1
+
+    move/from16 v0, v20
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    move-object/from16 v20, v0
+
+    const/16 v21, 0x0
+
+    aput-object v5, v20, v21
+
+    invoke-virtual/range {v18 .. v20}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v18
+
+    invoke-virtual/range {v17 .. v18}, Landroid/app/Notification$Builder;->setTicker(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
+
+    move-result-object v17
+
+    move-object/from16 v0, v17
+
+    move-wide/from16 v1, p6
+
+    invoke-virtual {v0, v1, v2}, Landroid/app/Notification$Builder;->setWhen(J)Landroid/app/Notification$Builder;
+
+    move-result-object v17
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/phone/NotificationMgr;->mContext:Landroid/content/Context;
+
+    move-object/from16 v18, v0
+
+    move-object/from16 v0, v18
+
+    move/from16 v1, v16
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
+
+    move-result-object v18
+
+    invoke-virtual/range {v17 .. v18}, Landroid/app/Notification$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
+
+    move-result-object v17
+
+    move-object/from16 v0, v17
+
+    invoke-virtual {v0, v7}, Landroid/app/Notification$Builder;->setContentText(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
+
+    move-result-object v17
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/phone/NotificationMgr;->mContext:Landroid/content/Context;
+
+    move-object/from16 v18, v0
+
+    const/16 v19, 0x0
+
+    const/16 v20, 0x0
+
+    move-object/from16 v0, v18
+
+    move/from16 v1, v19
+
+    move/from16 v2, v20
+
+    invoke-static {v0, v1, v4, v2}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+
+    move-result-object v18
+
+    invoke-virtual/range {v17 .. v18}, Landroid/app/Notification$Builder;->setContentIntent(Landroid/app/PendingIntent;)Landroid/app/Notification$Builder;
+
+    move-result-object v17
+
+    const/16 v18, 0x1
+
+    invoke-virtual/range {v17 .. v18}, Landroid/app/Notification$Builder;->setAutoCancel(Z)Landroid/app/Notification$Builder;
+
+    move-result-object v17
+
+    invoke-direct/range {p0 .. p0}, Lcom/android/phone/NotificationMgr;->createClearMissedCallsIntent()Landroid/app/PendingIntent;
+
+    move-result-object v18
+
+    invoke-virtual/range {v17 .. v18}, Landroid/app/Notification$Builder;->setDeleteIntent(Landroid/app/PendingIntent;)Landroid/app/Notification$Builder;
+
+    .line 698
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/android/phone/NotificationMgr;->mNumberMissedCalls:I
+
+    move/from16 v17, v0
+
+    const/16 v18, 0x1
+
+    move/from16 v0, v17
+
+    move/from16 v1, v18
+
+    if-ne v0, v1, :cond_3
+
+    invoke-static/range {p2 .. p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v17
+
+    if-nez v17, :cond_3
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/phone/NotificationMgr;->mContext:Landroid/content/Context;
+
+    move-object/from16 v17, v0
+
+    const v18, 0x7f0b0010
+
+    invoke-virtual/range {v17 .. v18}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v17
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v17
+
+    invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v17
+
+    if-nez v17, :cond_3
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/phone/NotificationMgr;->mContext:Landroid/content/Context;
+
+    move-object/from16 v17, v0
+
+    const v18, 0x7f0b000f
+
+    invoke-virtual/range {v17 .. v18}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v17
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v17
+
+    invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v17
+
+    if-nez v17, :cond_3
+
+    .line 706
+    const v17, 0x7f020207
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/phone/NotificationMgr;->mContext:Landroid/content/Context;
+
+    move-object/from16 v18, v0
+
+    const v19, 0x7f0b01a8
+
+    invoke-virtual/range {v18 .. v19}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v18
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/phone/NotificationMgr;->mContext:Landroid/content/Context;
+
+    move-object/from16 v19, v0
+
+    move-object/from16 v0, v19
+
+    move-object/from16 v1, p2
+
+    invoke-static {v0, v1}, Lcom/android/phone/PhoneApp;->getCallBackPendingIntent(Landroid/content/Context;Ljava/lang/String;)Landroid/app/PendingIntent;
+
+    move-result-object v19
+
+    move/from16 v0, v17
+
+    move-object/from16 v1, v18
+
+    move-object/from16 v2, v19
+
+    invoke-virtual {v3, v0, v1, v2}, Landroid/app/Notification$Builder;->addAction(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)Landroid/app/Notification$Builder;
+
+    .line 710
+    const v17, 0x7f0201d0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/phone/NotificationMgr;->mContext:Landroid/content/Context;
+
+    move-object/from16 v18, v0
+
+    const v19, 0x7f0b01a9
+
+    invoke-virtual/range {v18 .. v19}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v18
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/phone/NotificationMgr;->mContext:Landroid/content/Context;
+
+    move-object/from16 v19, v0
+
+    move-object/from16 v0, v19
+
+    move-object/from16 v1, p2
+
+    invoke-static {v0, v1}, Lcom/android/phone/PhoneApp;->getSendSmsFromNotificationPendingIntent(Landroid/content/Context;Ljava/lang/String;)Landroid/app/PendingIntent;
+
+    move-result-object v19
+
+    move/from16 v0, v17
+
+    move-object/from16 v1, v18
+
+    move-object/from16 v2, v19
+
+    invoke-virtual {v3, v0, v1, v2}, Landroid/app/Notification$Builder;->addAction(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)Landroid/app/Notification$Builder;
+
+    .line 714
+    if-eqz p5, :cond_9
+
+    .line 715
+    move-object/from16 v0, p5
+
+    invoke-virtual {v3, v0}, Landroid/app/Notification$Builder;->setLargeIcon(Landroid/graphics/Bitmap;)Landroid/app/Notification$Builder;
+
+    .line 726
+    .end local p4
+    :cond_3
+    :goto_5
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/phone/NotificationMgr;->mContext:Landroid/content/Context;
+
+    move-object/from16 v17, v0
+
+    const/16 v18, 0x0
+
+    const/16 v19, 0x0
+
+    move-object/from16 v0, v17
+
+    move/from16 v1, v18
+
+    move/from16 v2, v19
+
+    invoke-static {v0, v1, v4, v2}, Landroid/app/PendingIntent;->getBroadcast(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+
+    move-result-object v6
+
+    .line 727
+    .local v6, calllogIntentPlus:Landroid/app/PendingIntent;
+    new-instance v17, Lcom/mediatek/notification/NotificationPlus$Builder;
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/phone/NotificationMgr;->mContext:Landroid/content/Context;
+
+    move-object/from16 v18, v0
+
+    invoke-direct/range {v17 .. v18}, Lcom/mediatek/notification/NotificationPlus$Builder;-><init>(Landroid/content/Context;)V
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/phone/NotificationMgr;->mContext:Landroid/content/Context;
+
+    move-object/from16 v18, v0
+
+    move-object/from16 v0, v18
+
+    move/from16 v1, v16
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v18
+
+    invoke-virtual/range {v17 .. v18}, Lcom/mediatek/notification/NotificationPlus$Builder;->setTitle(Ljava/lang/String;)Lcom/mediatek/notification/NotificationPlus$Builder;
+
+    move-result-object v17
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/phone/NotificationMgr;->mContext:Landroid/content/Context;
+
+    move-object/from16 v18, v0
+
+    const v19, 0x7f0b019b
+
+    const/16 v20, 0x1
+
+    move/from16 v0, v20
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    move-object/from16 v20, v0
+
+    const/16 v21, 0x0
+
+    aput-object v5, v20, v21
+
+    invoke-virtual/range {v18 .. v20}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v18
+
+    invoke-virtual/range {v17 .. v18}, Lcom/mediatek/notification/NotificationPlus$Builder;->setMessage(Ljava/lang/String;)Lcom/mediatek/notification/NotificationPlus$Builder;
+
+    move-result-object v17
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/phone/NotificationMgr;->mContext:Landroid/content/Context;
+
+    move-object/from16 v18, v0
+
+    const v19, 0x7f0b0035
+
+    invoke-virtual/range {v18 .. v19}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v18
+
+    move-object/from16 v0, v17
+
+    move-object/from16 v1, v18
+
+    invoke-virtual {v0, v1, v6}, Lcom/mediatek/notification/NotificationPlus$Builder;->setPositiveButton(Ljava/lang/String;Landroid/app/PendingIntent;)Lcom/mediatek/notification/NotificationPlus$Builder;
+
+    move-result-object v17
+
+    invoke-virtual/range {v17 .. v17}, Lcom/mediatek/notification/NotificationPlus$Builder;->create()Lcom/mediatek/notification/NotificationPlus;
+
+    move-result-object v11
+
+    .line 734
+    .local v11, notiPlus:Lcom/mediatek/notification/NotificationPlus;
+    const/16 v17, 0x1
+
+    move/from16 v0, v17
+
+    invoke-static {v0, v11}, Lcom/mediatek/notification/NotificationManagerPlus;->notify(ILcom/mediatek/notification/NotificationPlus;)V
+
+    .line 734
+    invoke-virtual {v3}, Landroid/app/Notification$Builder;->getNotification()Landroid/app/Notification;
+
+    move-result-object v12
+
+    .line 735
+    .local v12, notification:Landroid/app/Notification;
+    iput-wide v13, v12, Landroid/app/Notification;->simId:J
+
+    .line 736
+    const/16 v17, 0x1
+
+    move/from16 v0, v17
+
+    iput v0, v12, Landroid/app/Notification;->simInfoType:I
+
+    .line 737
+    invoke-static {v12}, Lcom/android/phone/NotificationMgr;->configureLedNotification(Landroid/app/Notification;)V
+
+    .line 738
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/phone/NotificationMgr;->mNotificationManager:Landroid/app/NotificationManager;
+
+    move-object/from16 v17, v0
+
+    const/16 v18, 0x1
+
+    move-object/from16 v0, v17
+
+    move/from16 v1, v18
+
+    invoke-virtual {v0, v1, v12}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
+
+    .line 739
+    invoke-direct/range {p0 .. p0}, Lcom/android/phone/NotificationMgr;->notifyMissedCallCount()V
+
+    .line 741
+    invoke-direct/range {p0 .. p0}, Lcom/android/phone/NotificationMgr;->broadcastMissCallIntent()V
+
+    goto/16 :goto_0
+
+    .line 646
+    .end local v3           #builder:Landroid/app/Notification$Builder;
+    .end local v5           #callName:Ljava/lang/String;
+    .end local v6           #calllogIntentPlus:Landroid/app/PendingIntent;
+    .end local v7           #expandedText:Ljava/lang/String;
+    .end local v11           #notiPlus:Lcom/mediatek/notification/NotificationPlus;
+    .end local v12           #notification:Landroid/app/Notification;
+    .end local v15           #smallIconId:I
+    .end local v16           #titleResId:I
+    .restart local p4
+    :cond_4
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/phone/NotificationMgr;->mMissedCallsNumbers:Ljava/util/ArrayList;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/phone/NotificationMgr;->mContext:Landroid/content/Context;
+
+    move-object/from16 v18, v0
+
+    const v19, 0x7f0b000f
+
+    invoke-virtual/range {v18 .. v19}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v18
+
+    invoke-virtual/range {v17 .. v18}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto/16 :goto_1
+
+    .line 662
+    :cond_5
+    invoke-static/range {p2 .. p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v17
+
+    if-nez v17, :cond_6
+
+    .line 663
+    move-object/from16 v5, p2
+
+    .restart local v5       #callName:Ljava/lang/String;
+    goto/16 :goto_2
+
+    .line 666
+    .end local v5           #callName:Ljava/lang/String;
+    :cond_6
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/phone/NotificationMgr;->mContext:Landroid/content/Context;
+
+    move-object/from16 v17, v0
+
+    const v18, 0x7f0b000f
+
+    invoke-virtual/range {v17 .. v18}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    .restart local v5       #callName:Ljava/lang/String;
+    goto/16 :goto_2
+
+    .line 676
+    :cond_7
+    const v16, 0x7f0b0199
+
+    .line 677
+    .restart local v16       #titleResId:I
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/phone/NotificationMgr;->mContext:Landroid/content/Context;
+
+    move-object/from16 v17, v0
+
+    const v18, 0x7f0b019a
+
+    const/16 v19, 0x1
+
+    move/from16 v0, v19
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    move-object/from16 v19, v0
+
+    const/16 v20, 0x0
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/android/phone/NotificationMgr;->mNumberMissedCalls:I
+
+    move/from16 v21, v0
+
+    invoke-static/range {v21 .. v21}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v21
+
+    aput-object v21, v19, v20
+
+    invoke-virtual/range {v17 .. v19}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v7
+
+    .restart local v7       #expandedText:Ljava/lang/String;
+    goto/16 :goto_3
+
+    .line 681
+    :cond_8
+    const v15, 0x108007f
+
+    goto/16 :goto_4
+
+    .line 716
+    .restart local v3       #builder:Landroid/app/Notification$Builder;
+    .restart local v15       #smallIconId:I
+    :cond_9
+    move-object/from16 v0, p4
+
+    instance-of v0, v0, Landroid/graphics/drawable/BitmapDrawable;
+
+    move/from16 v17, v0
+
+    if-eqz v17, :cond_3
+
+    .line 717
+    check-cast p4, Landroid/graphics/drawable/BitmapDrawable;
+
+    .end local p4
+    invoke-virtual/range {p4 .. p4}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
+
+    move-result-object v17
+
+    move-object/from16 v0, v17
+
+    invoke-virtual {v3, v0}, Landroid/app/Notification$Builder;->setLargeIcon(Landroid/graphics/Bitmap;)Landroid/app/Notification$Builder;
+
+    goto/16 :goto_5
+.end method

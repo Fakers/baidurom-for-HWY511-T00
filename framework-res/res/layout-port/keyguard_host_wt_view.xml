@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.internal.policy.impl.keyguard.KeyguardHostView androidprv:gravity="center_horizontal" androidprv:orientation="vertical" androidprv:id="@id/keyguard_host_view" androidprv:layout_width="fill_parent" androidprv:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:androidprv="http://schemas.android.com/apk/res/android">
+    <ImageView androidprv:layout_gravity="left" androidprv:id="@id/widgetleft" androidprv:paddingTop="60.0dip" androidprv:layout_width="wrap_content" androidprv:layout_height="wrap_content" androidprv:src="@drawable/ic_lockscreen_widget_left" />
+    <ImageView androidprv:layout_gravity="right" androidprv:id="@id/widgetright" androidprv:paddingTop="60.0dip" androidprv:layout_width="wrap_content" androidprv:layout_height="wrap_content" androidprv:src="@drawable/ic_lockscreen_widget_right" />
+    <com.android.internal.policy.impl.keyguard.SlidingChallengeLayout androidprv:id="@id/sliding_layout" androidprv:background="#30000000" androidprv:layout_width="fill_parent" androidprv:layout_height="fill_parent">
+        <FrameLayout androidprv:layout_width="fill_parent" androidprv:layout_height="fill_parent" androidprv:layout_childType="mediatekLayerBackground" />
+        <FrameLayout androidprv:layout_width="fill_parent" androidprv:layout_height="wrap_content" androidprv:layout_childType="pageDeleteDropTarget">
+            <include androidprv:layout_gravity="bottom|center" androidprv:id="@id/keyguard_widget_pager_delete_target" androidprv:layout_width="wrap_content" androidprv:layout_height="wrap_content" layout="@layout/keyguard_widget_remove_drop_target" />
+        </FrameLayout>
+        <FrameLayout androidprv:layout_width="fill_parent" androidprv:layout_height="126.0dip" androidprv:layout_childType="widgets">
+            <include androidprv:layout_gravity="center" androidprv:id="@id/app_widget_container" androidprv:layout_width="fill_parent" androidprv:layout_height="wrap_content" layout="@layout/keyguard_widget_wt_pager" />
+        </FrameLayout>
+        <View androidprv:background="#99000000" androidprv:layout_width="fill_parent" androidprv:layout_height="fill_parent" androidprv:layout_childType="scrim" />
+        <FrameLayout androidprv:layout_width="fill_parent" androidprv:layout_height="fill_parent" androidprv:layout_childType="mediatekLayerForeground" />
+        <com.android.internal.policy.impl.keyguard.KeyguardSecurityContainer androidprv:gravity="top|center" androidprv:id="@id/keyguard_security_container" androidprv:padding="0.0dip" androidprv:layout_width="wrap_content" androidprv:layout_height="wrap_content" androidprv:layout_maxHeight="@dimen/keyguard_security_height_wt" androidprv:layout_childType="challenge">
+            <com.android.internal.policy.impl.keyguard.KeyguardSecurityViewFlipper androidprv:gravity="center" androidprv:id="@id/view_flipper" androidprv:paddingTop="@dimen/keyguard_security_view_margin" androidprv:clipToPadding="false" androidprv:layout_width="fill_parent" androidprv:layout_height="fill_parent" />
+            <ImageButton androidprv:layout_gravity="bottom|left|center" androidprv:id="@id/keyguard_shortcut_camera" androidprv:background="@null" androidprv:paddingLeft="10.0dip" androidprv:focusable="true" androidprv:layout_width="wrap_content" androidprv:layout_height="wrap_content" androidprv:src="@drawable/ic_lockscreen_shortcut_camera" />
+            <ImageButton androidprv:layout_gravity="bottom|right|center" androidprv:id="@id/keyguard_shortcut_recorder" androidprv:background="@null" androidprv:paddingRight="10.0dip" androidprv:focusable="true" androidprv:layout_width="wrap_content" androidprv:layout_height="wrap_content" androidprv:src="@drawable/ic_lockscreen_shortcut_recorder" />
+        </com.android.internal.policy.impl.keyguard.KeyguardSecurityContainer>
+        <ImageButton androidprv:background="@null" androidprv:focusable="true" androidprv:layout_width="fill_parent" androidprv:layout_height="@dimen/kg_widget_pager_bottom_padding" androidprv:src="@drawable/keyguard_expand_challenge_handle" androidprv:scaleType="center" androidprv:contentDescription="@string/keyguard_accessibility_expand_lock_area" androidprv:layout_childType="expandChallengeHandle" />
+    </com.android.internal.policy.impl.keyguard.SlidingChallengeLayout>
+</com.android.internal.policy.impl.keyguard.KeyguardHostView>

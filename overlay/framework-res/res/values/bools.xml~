@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="config_quickbootSupport">false</bool>
+    <bool name="config_pbap_support">false</bool>
+    <bool name="config_wakeup_by_volume_key">false</bool>
+    <bool name="config_close_button_backlight">false</bool>
+    <bool name="config_safe_media_volume_enabled">false</bool> 
+</resources>

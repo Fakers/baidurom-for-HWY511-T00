@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<favorites
+  xmlns:launcher="http://schemas.android.com/apk/res/com.baidu.home2">
+    <appwidget className="com.baidu.launcher.searchbar.BaiduSearchWidgetProvider" packageName="com.baidu.home2" screen="1" spanX="4" spanY="1" x="0" y="0" />
+    <favorite className="com.chaozh.iReader.ui.activity.WelcomeActivity" packageName="com.chaozh.iReaderFree" screen="1" spanX="1" spanY="1" x="1" y="3" />
+    <favorite className="com.baiyi_mobile.gamecenter.ui.MainActivity" packageName="com.baiyi_mobile.gamecenter" screen="1" spanX="1" spanY="1" x="2" y="3" />
+    <favorite className="com.android.ops.stub.activity.DisplayItemActivity" packageName="com.baidu.android.ota" screen="1" spanX="1" spanY="1" x="3" y="3" />
+    <favorite className="com.baidu.help.MainActivity" packageName="com.baidu.help" screen="1" spanX="1" spanY="1" x="0" y="3" />
+    <favorite className="com.baidu.baidumaps.WelcomeScreen" packageName="com.baidu.BaiduMap" screen="1" spanX="1" spanY="1" x="0" y="3" />
+    <favorite className="com.baidu.camera.Camera" packageName="com.baidu.gallery3d" screen="2" spanX="1" spanY="1" x="0" y="2" />
+    <favorite className="com.baidu.camera.Camera" packageName="com.baidu.camera" screen="2" spanX="1" spanY="1" x="0" y="2" />
+    <favorite className="com.baidu.gallery3d.app.Gallery" packageName="com.baidu.gallery3d" screen="2" spanX="1" spanY="1" x="1" y="2" />
+    <favorite className="com.baidu.thememanager.ui.BaiduThemeActivity" packageName="com.baidu.thememanager.ui" screen="2" spanX="1" spanY="1" x="2" y="2" />
+    <favorite className="com.android.settings.Settings" packageName="com.android.settings" screen="2" spanX="1" spanY="1" x="0" y="3" />
+    <favorite className="com.baidu.appsearch.LauncherActivity" packageName="com.baidu.appsearch" screen="2" spanX="1" spanY="1" x="3" y="2" />
+    <favorite className="com.baiyi_mobile.search.MainActivity" packageName="com.baiyi_mobile.search" screen="2" spanX="1" spanY="1" x="1" y="3" />
+    <favorite className="com.baiyi_mobile.security.ui.MainSecurityActivity" packageName="com.baiyi_mobile.security" screen="2" spanX="1" spanY="1" x="2" y="3" />
+    <folders screen="2" title="实用工具" x="3" y="3" spanX="1" spanY="1" />
+    <folderapp className="com.android.email.activity.Welcome" packageName="com.android.email" screen="0" spanX="0" spanY="0" x="0" y="0" />
+    <folderapp className="com.android.calendar.AllInOneActivity" packageName="com.android.calendar" screen="0" spanX="0" spanY="0" x="0" y="0" />
+    <folderapp className="com.baidu.notepad.NotesList" packageName="com.baidu.notepad" screen="0" spanX="0" spanY="0" x="0" y="0" />
+    <folderapp className="com.baidu.baiduclock.BaiduClock" packageName="com.baidu.baiduclock" screen="0" spanX="0" spanY="0" x="0" y="0" />
+    <folderapp className="com.baidu.flashlight.FlashLightActivity" packageName="com.baidu.flashlight" screen="0" spanX="0" spanY="0" x="0" y="0" />
+    <folderapp className="com.android.calculator2.Calculator" packageName="com.android.calculator2" screen="0" spanX="0" spanY="0" x="0" y="0" />
+    <folderapp className="com.baidu.directshare.MainActivity" packageName="com.baidu.directshare" screen="0" spanX="0" spanY="0" x="0" y="0" />
+    <folderapp className="com.baidu.resmanager.filemanager.ui.MainActivity" packageName="com.baidu.resmanager.filemanager" screen="0" spanX="0" spanY="0" x="0" y="0" />
+    <folderapp className="com.baidu.help.MainActivity" packageName="com.baidu.help" screen="0" spanX="0" spanY="0" x="0" y="0" />
+    <baiduwidget screen="2" spanX="4" spanY="2" widgetID="6" x="0" y="0" />
+    <appdock className="com.android.contacts.activities.DialtactsActivity" packageName="com.android.contacts" screen="0" x="0" y="0" />
+    <appdock className="com.android.mms.ui.ConversationList" packageName="com.android.contacts" screen="0" x="1" y="0" />
+    <appdock className="com.android.contacts.activities.PeopleActivity" packageName="com.android.contacts" screen="0" x="3" y="0" />
+    <appdock className="com.baidu.browser.framework.BdBrowserActivity" packageName="com.baidu.browser.apps" screen="0" x="4" y="0" />
+</favorites>
