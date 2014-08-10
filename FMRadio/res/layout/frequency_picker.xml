@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="horizontal" android:paddingTop="@dimen/picker_layout_padding" android:paddingBottom="@dimen/picker_layout_padding" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/station_picker_bg" android:paddingLeft="@dimen/channel_picker_padding" android:paddingTop="0.0dip" android:paddingRight="@dimen/channel_picker_padding" android:paddingBottom="0.0dip" android:layout_width="wrap_content" android:layout_height="@dimen/channel_picker_height">
+        <com.mediatek.FMRadio.ValuePicker android:id="@id/integer_picker" android:layout_width="wrap_content" android:layout_height="@dimen/valuepicker_height" />
+        <View android:background="@drawable/station_picker_divider" android:layout_width="3.0px" android:layout_height="@dimen/channel_picker_height" />
+        <com.mediatek.FMRadio.ValuePicker android:id="@id/decimal_picker" android:layout_width="wrap_content" android:layout_height="@dimen/valuepicker_height" />
+    </LinearLayout>
+</LinearLayout>

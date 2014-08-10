@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/valuepicker_text_size" android:textColor="#ffffffff" android:gravity="center" android:id="@id/numberpicker_input" android:layout_width="@dimen/valuepicker_width" android:layout_height="wrap_content" style="attr/numberPickerInputTextStyle" />
+</merge>

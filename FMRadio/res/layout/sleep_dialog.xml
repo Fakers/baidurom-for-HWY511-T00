@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/layout" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBox android:textSize="18.0dip" android:id="@id/switch_view" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="16.0dip" android:text="@string/msg_enable_sleep_mode" />
+    <RelativeLayout android:paddingTop="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="18.0dip" android:textColor="#ff000000" android:gravity="center" android:id="@id/cur_value" android:background="@drawable/bg_tips" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" />
+    </RelativeLayout>
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <SeekBar android:id="@id/seekbar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginRight="16.0dip" android:max="60" />
+    </RelativeLayout>
+    <RelativeLayout android:paddingBottom="20.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="14.0dip" android:gravity="center" android:id="@id/value_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/value_1" android:layout_alignParentLeft="true" />
+        <TextView android:textSize="14.0dip" android:gravity="center" android:id="@id/value_15" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/value_2" android:layout_alignParentLeft="true" />
+        <TextView android:textSize="14.0dip" android:gravity="center" android:id="@id/value_30" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/value_3" android:layout_alignParentLeft="true" />
+        <TextView android:textSize="14.0dip" android:gravity="center" android:id="@id/value_45" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/value_4" android:layout_alignParentRight="true" />
+        <TextView android:textSize="14.0dip" android:gravity="center" android:id="@id/value_60" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/value_5" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+</LinearLayout>

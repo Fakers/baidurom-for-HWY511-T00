@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="display_frequency_on_color">#aa000000</color>
+    <color name="display_frequency_off_color">#33000000</color>
+    <color name="display_unit_on_color">#aa000000</color>
+    <color name="display_unit_off_color">#33000000</color>
+    <color name="display_name_on_color">#aa000000</color>
+    <color name="display_name_off_color">#33000000</color>
+    <color name="widget_name_on_color">#ff333333</color>
+    <color name="widget_name_off_color">#4d000000</color>
+    <color name="notify_name_on_color">#ff000000</color>
+    <color name="notify_name_off_color">#4c000000</color>
+    <color name="collect_name_on_color">#ff23a7d9</color>
+    <color name="collect_name_off_color">#ff000000</color>
+    <color name="widget_tv_text_color">#3c515151</color>
+    <color name="widget_tv_shadow_color">#ccffffff</color>
+</resources>

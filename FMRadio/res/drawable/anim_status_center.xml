@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:duration="200" android:drawable="@drawable/melody_4" />
+    <item android:duration="200" android:drawable="@drawable/melody_2" />
+    <item android:duration="200" android:drawable="@drawable/melody_3" />
+    <item android:duration="200" android:drawable="@drawable/melody_1" />
+    <item android:duration="200" android:drawable="@drawable/melody_3" />
+    <item android:duration="200" android:drawable="@drawable/melody_4" />
+    <item android:duration="200" android:drawable="@drawable/melody_3" />
+    <item android:duration="200" android:drawable="@drawable/melody_1" />
+    <item android:duration="200" android:drawable="@drawable/melody_2" />
+    <item android:duration="200" android:drawable="@drawable/melody_3" />
+</animation-list>

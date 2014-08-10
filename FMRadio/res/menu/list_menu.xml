@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/menu_edit_icon" android:id="@id/menu_edit" android:title="@string/menu_rename_channel" android:showAsAction="always" />
+    <item android:icon="@drawable/menu_sleep_icon" android:id="@id/menu_sleep" android:title="@string/msg_sleep_mode_setting" android:showAsAction="always" />
+    <item android:icon="@drawable/menu_search_icon" android:id="@id/menu_search" android:title="@string/title_search_station" android:showAsAction="always" />
+</menu>

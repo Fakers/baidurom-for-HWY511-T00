@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="msg_sleep_time">
+        <item quantity="other">收音机将在 %d 分钟后关闭。</item>
+        <item quantity="zero">收音机将在 %d 分钟后关闭。</item>
+        <item quantity="one">收音机将在 1 分钟后关闭。</item>
+        <item quantity="two">收音机将在 %d 分钟后关闭。</item>
+        <item quantity="few">收音机将在 %d 分钟后关闭。</item>
+        <item quantity="many">收音机将在 %d 分钟后关闭。</item>
+    </plurals>
+</resources>

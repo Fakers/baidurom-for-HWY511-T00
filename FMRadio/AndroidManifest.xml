@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:sharedUserId="android.uid.system" android:versionCode="6101" android:versionName="6.1.01" package="com.mediatek.FMRadio"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.ACCESS_MTK_MMHW" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <supports-screens android:anyDensity="true" android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" />
+    <application android:theme="@*android:style/Theme.Holo.Light" android:label="@string/title_fm" android:icon="@drawable/ic_launcher_icon" android:hardwareAccelerated="false">
+        <meta-data android:name="hwc-theme" android:value="androidhwext:style/Theme.Emui" />
+        <activity android:theme="@*android:style/Theme.Holo.Light.NoActionBar" android:name=".FMRadioMainActivity" android:launchMode="singleTop" android:configChanges="keyboardHidden|navigation|orientation|screenSize">
+            <meta-data android:name="hwc-theme" android:value="androidhwext:style/Theme.Emui.NoActionBar" />
+            <intent-filter>
+                <action android:name="com.mediatek.FMRadio.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/title_channellist" android:name="ChannelListActivity" android:taskAffinity="" android:clearTaskOnLaunch="true" android:excludeFromRecents="true" android:launchMode="singleTop" android:configChanges="keyboardHidden|orientation|screenSize" android:uiOptions="splitActionBarWhenNarrow">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="content" />
+                <data android:scheme="file" />
+                <data android:mimeType="fmradio/*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.mediatek.FMRadio.LIST_VIEWER" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@*android:style/Theme.Holo.Light.NoActionBar" android:label="@string/title_fm" android:name=".FMRadioEMActivity" android:clearTaskOnLaunch="true" android:launchMode="singleTask" android:configChanges="orientation|screenSize">
+            <meta-data android:name="hwc-theme" android:value="androidhwext:style/Theme.Emui.NoActionBar" />
+            <intent-filter>
+                <action android:name="com.mediatek.FMRadio.FMRadioEMActivity" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <service android:name=".FMRadioService">
+            <intent-filter>
+                <action android:name="com.mediatek.FMRadio.IFMRadioService" />
+            </intent-filter>
+        </service>
+        <receiver android:label="@string/widget_title_fm" android:icon="@drawable/ic_launcher_icon" android:name="FMRadioWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.huawei.android.FMRadio.openfm" />
+                <action android:name="com.huawei.android.FMRadio.stopfm" />
+                <action android:name="com.huawei.android.FMRadio.opensoundsuccess" />
+                <action android:name="com.huawei.android.FMRadio.playstatechanged" />
+                <action android:name="com.huawei.android.FMRadio.stopstatechanged" />
+                <action android:name="com.huawei.android.FMRadio.manualtunecomplete" />
+                <action android:name="com.huawei.android.FMRadio.operationfail" />
+                <action android:name="com.huawei.android.FMRadio.namechanged" />
+                <action android:name="com.huawei.android.FMRadio.savecollect" />
+                <action android:name="com.huawei.android.FMRadio.appwidget.update" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/appwidget_info" />
+        </receiver>
+        <provider android:name=".ChannelListProvider" android:authorities="com.mediatek.FMRadio.ChannelListProvider" />
+        <receiver android:name="FMRadioUpgradeReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PRE_BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.mediatek.FMRadio.FMMediaButtonIntentReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.mediatek.FMRadio.FMEventReceiver">
+            <intent-filter>
+                <action android:name="android.media.AUDIO_BECOMING_NOISY" />
+                <action android:name="android.intent.action.AIRPLANE_MODE" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

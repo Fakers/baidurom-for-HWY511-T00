@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="auto_search">
+        <item>@string/menu_search_keep_collect</item>
+        <item>@string/menu_search_not_keep_collect</item>
+    </string-array>
+</resources>

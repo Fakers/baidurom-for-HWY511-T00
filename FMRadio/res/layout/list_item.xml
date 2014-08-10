@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="64.0dip" android:maxHeight="64.0dip" android:minHeight="64.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:gravity="left|center" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="8.0dip" android:layout_weight="1.0">
+        <TextView android:textSize="18.0sp" android:textColor="#ff000000" android:id="@id/default_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <LinearLayout android:orientation="vertical" android:id="@id/exist_name_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_centerVertical="true">
+            <TextView android:textSize="18.0sp" android:textColor="#ff000000" android:id="@id/station_frequency" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <TextView android:textSize="14.0sp" android:textColor="#ff000000" android:ellipsize="marquee" android:id="@id/station_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:alpha="0.6" />
+        </LinearLayout>
+    </RelativeLayout>
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="48.0dip" android:layout_height="fill_parent">
+        <ImageView android:id="@id/left_play_indicator" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="1.0dip" />
+        <ImageView android:id="@id/center_play_indicator" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="1.0dip" android:layout_marginRight="1.0dip" />
+        <ImageView android:id="@id/right_play_indicator" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="1.0dip" />
+    </LinearLayout>
+    <ImageView android:layout_gravity="center" android:id="@id/collect_btn" android:layout_width="48.0dip" android:layout_height="wrap_content" android:src="@drawable/ic_star_off" android:contentDescription="@string/main_collect" />
+</LinearLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/repeat_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="right|center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="@dimen/top_layout_height">
+        <View android:background="@drawable/divider_vertical_gray" android:layout_width="@dimen/line_width" android:layout_height="@dimen/line_height" />
+        <ImageButton android:id="@id/headset_btn" android:background="#00000000" android:layout_width="@dimen/top_layout_btn_width" android:layout_height="fill_parent" android:src="@drawable/btn_speaker_src" android:contentDescription="@string/main_heast" />
+        <View android:background="@drawable/divider_vertical_gray" android:layout_width="@dimen/line_width" android:layout_height="@dimen/line_height" />
+        <ImageButton android:id="@id/list_btn" android:background="#00000000" android:layout_width="@dimen/top_layout_btn_width" android:layout_height="fill_parent" android:src="@drawable/btn_list_src" android:contentDescription="@string/main_list" />
+    </LinearLayout>
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="@dimen/center_layout_height">
+        <FrameLayout android:id="@id/display_layout" android:background="@drawable/display_bg" android:layout_width="@dimen/display_layout_width" android:layout_height="@dimen/display_layout_height" android:layout_alignParentTop="true" android:layout_centerHorizontal="true">
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/freq_text_margin_top" android:layout_centerHorizontal="true">
+                    <TextView android:textSize="@dimen/freq_text_size" android:textColor="#aa000000" android:id="@id/frequency_view" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:textSize="@dimen/freq_unit_text_size" android:textColor="#aa000000" android:id="@id/frequency_unit_view" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/freq_unit_text_margin_left" android:text="@string/freq_tag" />
+                </LinearLayout>
+                <TextView android:textSize="@dimen/name_text_size" android:textColor="#aa000000" android:ellipsize="marquee" android:gravity="center" android:id="@id/name_view" android:layout_width="@dimen/name_text_width" android:layout_height="wrap_content" android:layout_marginTop="@dimen/name_text_margin_top" android:singleLine="true" android:layout_centerHorizontal="true" />
+                <ImageView android:id="@id/indicator_view" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/indicator_margin_left" android:src="@drawable/control_bar" android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+            <ImageView android:id="@id/mask_view" android:background="@drawable/display_mask" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </FrameLayout>
+        <ImageView android:id="@id/light_view" android:background="@drawable/display_light" android:layout_width="fill_parent" android:layout_height="@dimen/light_view_height" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="5.0">
+            <ImageButton android:id="@id/prev_btn" android:background="@drawable/btn_prev_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/prev_next_btn_margin_horizontal" android:layout_alignParentLeft="true" android:layout_centerVertical="true" android:contentDescription="@string/main_pre" />
+            <ImageButton android:id="@id/power_btn" android:background="@drawable/btn_power_off_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" android:contentDescription="@string/main_power_off" />
+            <ImageButton android:id="@id/next_btn" android:background="@drawable/btn_next_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/prev_next_btn_margin_horizontal" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:contentDescription="@string/main_next" />
+        </RelativeLayout>
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:background="@drawable/sound_hole_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+    </LinearLayout>
+    <com.mediatek.FMRadio.CollectPager android:layout_width="fill_parent" android:layout_height="@dimen/favorite_item_height">
+        <GridView android:id="@id/collect_layout_view" android:background="@drawable/btn_favorite_bg" android:layout_width="@dimen/favorite_layout_width" android:layout_height="fill_parent" android:columnWidth="@dimen/favorite_item_width" android:numColumns="8" />
+        <RelativeLayout android:layout_width="@dimen/favorite_layout_width" android:layout_height="fill_parent">
+            <View android:id="@id/center_line" android:background="@drawable/divider_vertical_gray" android:visibility="invisible" android:layout_width="@dimen/line_width" android:layout_height="@dimen/line_height" android:layout_centerInParent="true" />
+        </RelativeLayout>
+    </com.mediatek.FMRadio.CollectPager>
+</LinearLayout>
